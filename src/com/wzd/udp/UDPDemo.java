@@ -20,8 +20,8 @@ public class UDPDemo {
         //将数据封装到数据包中
         DatagramPacket datagramPacket = new DatagramPacket(data.getBytes(), 0, data.getBytes().length, InetAddress.getLocalHost(), 12001);
         //调用UDP服务发送数据包
-        while (true) {
-            datagramSocket.send(datagramPacket);
-        }
+        datagramSocket.send(datagramPacket);
+        //关闭连接
+        datagramSocket.close();
     }
 }
